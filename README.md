@@ -7,4 +7,8 @@ To redirect all requests to example.com:
 heroku config:add NEW_BASE_URL=http://example.com
 ```
 
-**NOTE:** You may need to delete and re-create your Heroku app before pushing an entirely new Git repository into it.
+You can also choose which redirect status code to use
+
+```
+heroku config:add STATUS_CODE=302
+```
