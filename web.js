@@ -2,8 +2,10 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var statusCode  = process.env.STATUS_CODE || 301;
+
 app.get('*', function(request, response) {
-  response.redirect(process.env.NEW_BASE_URL + request.url)
+  response.redirect(statusCode, process.env.NEW_BASE_URL + request.url)
 });
 
 var port = process.env.PORT || 5000;
